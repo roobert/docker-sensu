@@ -4,6 +4,18 @@
 
 An experiment in dockerizing Sensu..
 
+## TODO
+
+* config management
+* handlers / extensions for sensu-server
+* plugins / config for `sensu-client`
+* RabbitMQ SSL
+* `nginx`
+* HA
+  * keepalived
+  * haproxy
+  * redis-sentinel
+
 ## Ubuntu Base Image
 
 ```
