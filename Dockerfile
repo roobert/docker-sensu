@@ -36,4 +36,7 @@ ENV GEM_PATH /opt/sensu/embedded/lib/ruby/gems/${SENSU_GEMS_VERSION}:$GEM_PATH
 ADD dependencies.sh /tmp/
 RUN bash /tmp/dependencies.sh
 
-CMD /opt/sensu/embedded/bin/sensu-${SENSU_SERVICE} --config_dir /sensu/conf.d --extension_dir /sensu/extensions --log_level $LOG_LEVEL
+CMD /opt/sensu/embedded/bin/sensu-${SENSU_SERVICE} \
+  --config_dir /sensu/conf.d \
+  --extension_dir /sensu/extensions \
+  --log_level $LOG_LEVEL
