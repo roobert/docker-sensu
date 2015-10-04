@@ -6,7 +6,8 @@ An experiment in dockerizing Sensu..
 
 ## TODO
 
-* config management
+* config management for /srv/
+* dependency management for sensu-server and sensu-cli
 * handlers / extensions for sensu-server
 * plugins / config for `sensu-client`
 * RabbitMQ SSL
