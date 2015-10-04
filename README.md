@@ -94,7 +94,7 @@ docker run \
   -e TRANSPORT_NAME=rabbitmq \
   -e RABBITMQ_URL=amqp://rabbitmq:5672 \
   -e REDIS_URL=redis://redis:6379 \
-  -e API_PORT=4567 \
+  -e SENSU_API_PORT=4567 \
   -e SENSU_SERVICE=api \
   roobert/sensu-service
 ```
