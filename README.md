@@ -1,7 +1,8 @@
+# docker-sensu
 
 ## About
 
-This is a work in progress..!
+An experiment in dockerizing Sensu..
 
 ## Ubuntu Base Image
 
@@ -129,7 +130,7 @@ docker run \
   -d \
   -p 3000:3000 \
   --link sensu-api \
-  --link sensu-rabbitmq \
+  --link rabbitmq \
   -v /srv/sensu/uchiwa:/config \
   sensu/uchiwa
 ```
