@@ -58,7 +58,7 @@ Test RabbitMQ by opening a connection in a web browser to port `15672` and loggi
 
 ## Sensu
 
-### Build Image
+### Build Generic Image
 
 All Sensu services use the same runtime so build a generic `sensu-service` container:
 
