@@ -4,14 +4,13 @@
 
 An experiment in dockerizing Sensu..
 
-## Pre-Requisites
-
-* [docker-redis](http://github.com/roobert/docker-redis)
-* [docker-rabbitmq](http://github.com/roobert/docker-rabbitmq)
-
 ## Post-Requisites
 
 * [docker-uchiwa](http://github.com/roobert/docker-uchiwa)
+* [docker-redis](http://github.com/roobert/docker-redis)
+* [docker-rabbitmq](http://github.com/roobert/docker-rabbitmq)
+* [docker-sensu-api](http://github.com/roobert/docker-sensu-api)
+* [docker-sensu-server](http://github.com/roobert/docker-sensu-server)
 
 ## TODO
 
@@ -30,43 +29,4 @@ An experiment in dockerizing Sensu..
 ## Build
 ```
 docker build -t sensu .
-```
-
-## Run
-```
-docker run \
-  --name sensu-server \
-  -d \
-  --link redis \
-  --link rabbitmq \
-  -e TRANSPORT_NAME=rabbitmq \
-  -e RABBITMQ_URL=amqp://rabbitmq:5672 \
-  -e REDIS_URL=redis://redis:6379 \
-  -e SENSU_SERVICE=server \
-  -v ./data:/sensu \
-  sensu
-
-docker run \
-  --name sensu-api \
-  -d \
-  --link redis \
-  --link rabbitmq \
-  -p 4567:4567 \
-  -e TRANSPORT_NAME=rabbitmq \
-  -e RABBITMQ_URL=amqp://rabbitmq:5672 \
-  -e REDIS_URL=redis://redis:6379 \
-  -e SENSU_API_PORT=4567 \
-  -e SENSU_SERVICE=api \
-  sensu
-```
-
-## Compose
-```
-docker-compose up -d
-```
-
-## Test
-```
-docker logs sensu-server
-docker exec -it redis redis-cli get leader
 ```
