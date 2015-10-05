@@ -9,6 +9,10 @@ An experiment in dockerizing Sensu..
 * [docker-redis](http://github.com/roobert/docker-redis)
 * [docker-rabbitmq](http://github.com/roobert/docker-rabbitmq)
 
+## Post-Requisites
+
+* [docker-uchiwa](http://github.com/roobert/docker-uchiwa)
+
 ## TODO
 
 * config management for /srv/
@@ -28,7 +32,7 @@ An experiment in dockerizing Sensu..
 docker build -t sensu .
 ```
 
-## Docker Run Sensu Server
+## Run
 ```
 docker run \
   --name sensu-server \
