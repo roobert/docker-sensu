@@ -2,7 +2,7 @@ sensu-server:
   container_name: sensu-server
   restart: always
   image: sensu
-  links:
+  external_links:
     - redis
     - rabbitmq
   environment:
@@ -17,7 +17,7 @@ sensu-api:
   container_name: sensu-api
   restart: always
   image: sensu
-  links:
+  external_links:
     - redis
     - rabbitmq
   environment:
