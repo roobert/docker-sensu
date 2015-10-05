@@ -64,7 +64,7 @@ Test RabbitMQ by opening a connection in a web browser to port `15672` and loggi
 All Sensu services use the same runtime so build a generic `sensu-service` container:
 
 ```
-docker build -t roobert/sensu-service github.com/roobert/sensu-service
+docker build -t sensu github.com/roobert/docker-sensu
 ```
 
 ### Server
@@ -85,7 +85,7 @@ docker run \
   -e REDIS_URL=redis://redis:6379 \
   -e SENSU_SERVICE=server \
   -v /srv/sensu/server:/sensu \
-  roobert/sensu-service
+  sensu
 ```
 
 Test Sensu server:
@@ -110,7 +110,7 @@ docker run \
   -e REDIS_URL=redis://redis:6379 \
   -e SENSU_API_PORT=4567 \
   -e SENSU_SERVICE=api \
-  roobert/sensu-service
+  sensu
 ```
 
 ### UI
