@@ -25,6 +25,8 @@ sensu-api:
     - RABBITMQ_URL=amqp://rabbitmq:5672
     - REDIS_URL=redis://redis:6379
     - SENSU_API_PORT=4567
-    - SENSU_SERVICE=server
+    - SENSU_SERVICE=api
   volumes:
     - ./data/api:/sensu
+  ports:
+    - "4567:4567"
